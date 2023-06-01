@@ -2,7 +2,7 @@
 
 <br>
 
-<h3>Sisttema MOVE de BH/MG dirigido por uma Inteligência Artificial</h3>
+<h3>Sistema MOVE de BH/MG dirigido por uma Inteligência Artificial</h3>
 
 <br>
 
