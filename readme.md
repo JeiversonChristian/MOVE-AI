@@ -7,3 +7,12 @@
 <br>
 
 <h2>Projeto em Andamento</h2>
+
+<br>
+
+<h2>Etapas</h2>
+
+<ul>
+    <li> Fazer versão em que podemos mover o ônibus.</li>
+    <li> Fazer o ônibus aprender a seguir a estrada sozinho.</li>
+</ul>
