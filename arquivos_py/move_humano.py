@@ -28,17 +28,36 @@ IMAGEM_MOVE = pygame.image.load('imagens/move.png')
 #--------------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------------
+# Classes (ou objetos)
+
+# ônibus move
+class move:
+
+    # posição do ônibus (x,y)
+    def __init__(self, x, y):
+        self.imagem = IMAGEM_MOVE
+        self.x = x
+        self.y = y
+
+    def desenhar(self, tela):
+        tela.blit(self.imagem, (self.x, self.y))
+#--------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------
 # Funções
 
 # Desenha a tela do jogo
 # Recebe como parâmetro a tela que será desenhada
-def desenhar_tela(tela):
+def desenhar_tela(tela, onibus_move):
     
     # Desenha a imagem de fundo na tela do jogo, dando a posição inicial (x,y) como parâmetro
     tela.blit(IMAGEM_FUNDO, (0,0))
 
     # Desenha a estrada do move na tela do jogo, dando a posição inicial (x,y) como parâmetro
     tela.blit(IMAGEM_ESTRADA_MOVE, (0,0))
+
+    # Desenha o ônibus move na tela do jogo, utilizando sua própria função de se desenhar
+    onibus_move.desenhar(tela)
 
     # Atualiza a tela
     pygame.display.update()
@@ -50,6 +69,10 @@ def main():
     # Criando a tela do jogo
     # É passado um par de números relativos às dimensões da tela (x,y)
     tela  = pygame.display.set_mode( (LARGURA_TELA, ALTURA_TELA) )
+
+    # Criando o objeto do ônibus move
+    # (100,600) -> posição inicial
+    onibus_move = move(345,651)
 
     # O jogo está rodando
     rodando = True
@@ -68,8 +91,10 @@ def main():
                 # finaliza o código
                 quit()
 
-        desenhar_tela(tela)
+        desenhar_tela(tela, onibus_move)
 #--------------------------------------------------------------------------------------------------------
 
+#--------------------------------------------------------------------------------------------------------
 # Executa a função principal
 main()
+#--------------------------------------------------------------------------------------------------------
