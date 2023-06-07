@@ -38,9 +38,14 @@ class move:
         self.imagem = IMAGEM_MOVE
         self.x = x
         self.y = y
+        self.velocidade = 5
 
     def desenhar(self, tela):
         tela.blit(self.imagem, (self.x, self.y))
+
+    def  andar_frente(self):
+        # andar pra frente é incrementar a posição x em que o busão é desenhado na tela
+        self.x += self.velocidade
 #--------------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------------
@@ -90,6 +95,15 @@ def main():
                 pygame.quit()
                 # finaliza o código
                 quit()
+
+        # Chaves é um vetor que guardara o estado de todas as teclas permitidas de serem analisadas
+        # esse estado será 1 ou 0, para está sendo pressionada ou não está sendo pressionada
+        chaves = pygame.key.get_pressed()
+
+        # caso o estado da tecla "d" seja 1, então ela está sendo pressionada
+        if chaves[pygame.K_d]:
+            # vai ser atualizada a posição x do busão antes dele ser desenhado na tela
+            onibus_move.andar_frente()
 
         desenhar_tela(tela, onibus_move)
 #--------------------------------------------------------------------------------------------------------
