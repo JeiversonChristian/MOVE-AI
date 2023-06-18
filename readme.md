@@ -6,7 +6,7 @@
 
 <br>
 
-<h2>Projeto em Andamento</h2>
+<h2>Projeto Pausado</h2>
 
 <br>
 
